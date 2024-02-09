@@ -1,11 +1,4 @@
 ---
-import BlogCard from "@/components/BlogCard.astro";
-import Pagination from "@/components/Pagination.astro";
-import config from "@/config/config.json";
-import Base from "@/layouts/Base.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { sortByDate } from "@/lib/utils/sortFunctions";
-
 import ImageMod from "@/components/ImageMod.astro";
 import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -14,15 +7,6 @@ import Testimonial from "@/partials/Testimonial.astro";
 import type { Button, Feature } from "@/types";
 import { getEntry } from "astro:content";
 import { FaCheck } from "react-icons/fa";
-
-const BLOG_FOLDER = "blog";
-
-const postIndex = await getEntry(BLOG_FOLDER, "-index");
-const posts = await getSinglePage(BLOG_FOLDER);
-const sortedPosts = sortByDate(posts);
-const totalPages: number = Math.ceil(posts.length / config.settings.pagination);
-const currentPosts = sortedPosts.slice(0, config.settings.pagination);
----
 
 interface Homepage {
   banner: {
@@ -33,7 +17,6 @@ interface Homepage {
   };
   features: Feature[];
 }
-
 
 const homepage = await getEntry("homepage", "-index");
 const testimonial = await getEntry("sections", "testimonial");
@@ -84,22 +67,7 @@ const { banner, features }: Homepage = homepage.data;
     </div>
   </section>
   <!-- /Banner -->
-  <div class="lg:col-8">
-    <div class="row">
-      {
-        currentPosts.map((post) => (
-          <div class="mb-14 md:col-6">
-            <BlogCard data={post} />
-          </div>
-        ))
-      }
-    </div>
-    <Pagination
-      section={BLOG_FOLDER}
-      currentPage={1}
-      totalPages={totalPages}
-    />
-  </div>
+
   <!-- Features -->
   {
     features.map((feature, index: number) => (
