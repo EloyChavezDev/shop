@@ -5,43 +5,20 @@
       "url": "/"
     },
     {
-      "name": "About",
-      "url": "/about"
+      "name": "Shop",
+      "url": "/blog"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Marcas",
+      "url": "/categories"
     },
     {
-      "name": "Pages",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Contact",
-          "url": "/contact"
-        },
-        {
-          "name": "Blog",
-          "url": "/blog"
-        },
-        {
-          "name": "Authors",
-          "url": "/authors"
-        },
-        {
-          "name": "Categories",
-          "url": "/categories"
-        },
-        {
-          "name": "Tags",
-          "url": "/tags"
-        },
-        {
-          "name": "404 Page",
-          "url": "/404"
-        }
-      ]
+      "name": "Productos",
+      "url": "/tags"
+    },
+    {
+      "name": "Contacto",
+      "url": "/tags"
     }
   ],
   "footer": [
