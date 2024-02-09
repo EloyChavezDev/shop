@@ -16,6 +16,7 @@ features:
     content: "Astroplate is a comprehensive starter template that includes everything you need to get started with your Astro project. What's Included in Astroplate"
     bulletpoints:
       - "10+ Pre-build pages"
+      - This is [an example](http://example.com/ "Title") inline link.
       - "95+ Google Pagespeed Score"
       - "Build with Astro and TailwindCSS for easy and customizable styling"
       - "Fully responsive on all devices"
